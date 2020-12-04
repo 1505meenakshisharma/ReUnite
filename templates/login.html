@@ -1,0 +1,26 @@
+{% extends 'homepage.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'reunite_assets/css/hide_titles_container-boxes_classes.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-section">
+  <form method="post">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      {{ form|crispy }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Sign In</button>
+      <small class="text-muted ml-2">
+        <a href="#">Forgot Password?</a>
+      </small>
+    </div>
+  </form>
+</div>
+{% endblock %}

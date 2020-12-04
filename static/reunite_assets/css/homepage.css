@@ -1,0 +1,239 @@
+input[type = number]::-webkit-inner-spin-button,
+input[type = number]::-webkit-outer-spin-button,
+input[type = date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+header {
+  font-family: Pacifico;
+  background-color: #00d9ff4f;
+}
+
+.homepage_logo {
+  display: inline-block;
+  width: 150px;
+  height: 140px;
+}
+
+.header_marquee {
+    display: inline-block;
+    width: 1195px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 black;
+}
+
+.header_marquee a:hover {
+    text-decoration: none;
+}
+
+header nav {
+  padding: 1px;
+  background-color: #E2BD61;
+}
+
+nav ul {
+  margin: 8px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+nav li a {
+  padding: 5px;
+  margin: 104px;
+  color: white;
+  transition: all 250ms ease-in;
+}
+
+nav li a:hover {
+  background: rgba(255,255,255,.3);
+  color: black;
+}
+
+.messages {
+  margin: 10px;
+}
+
+.success {
+  text-align: center;
+  font-size: 18px;
+  color: green;
+  letter-spacing: 3px;
+  margin: 0px;
+  text-shadow: 1px 1px 0 black;
+}
+
+.error {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  letter-spacing: 3px;
+  margin: 0px;
+  text-shadow: 1px 1px 0 black;
+}
+
+.content-section {
+  width: 50%;
+  margin: 25px auto;
+}
+
+.logout {
+  text-align: center;
+  font-size: 18px;
+  color: green;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0 black;
+}
+
+.logout a:hover {
+  background: rgba(255,255,255,.3);
+  color: black;
+  text-decoration: none;
+}
+
+.about_p {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0 black;
+  margin: 15px;
+}
+
+.about_div {
+  width: 700px;
+  height: 220px;
+  margin: auto;
+}
+
+.about_div h2 {
+  font-size: 25px;
+}
+
+.titles {
+  text-align: center;
+  width: 50vw;
+  margin: 0 auto;
+  display: inline;
+}
+
+.titles .login_logo {
+    position: relative;
+    top: 68px;
+    display: inline-block;
+    width: 120px;
+    height: 110px;
+    color: green;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 black;
+    text-decoration: none;
+}
+
+.titles .my_child_is_missing_cartoon_logo {
+    position: relative;
+    top: 93px;
+    display: inline-block;
+    width: 115px;
+    height: 130px;
+    color: green;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 black;
+    text-decoration: none;
+}
+
+.titles .search_a_missing_child_cartoon_logo {
+    position: relative;
+    top: 93px;
+    display: inline-block;
+    width: 180px;
+    height: 130px;
+    color: green;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 black;
+    text-decoration: none;
+}
+
+.titles .sighted_a_missing_child_logo {
+    position: relative;
+    top: 94px;
+    display: inline-block;
+    width: 140px;
+    height: 90px;
+    color: green;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 black;
+    text-decoration: none;
+}
+
+.titles h1 {
+  font-family: Pacifico;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-left: -130px;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 0 black;
+}
+
+.titles p {
+  margin-left: -125px;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0 black;
+}
+
+.container-boxes {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 80vw;
+}
+
+.box {
+  margin: 1rem;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  max-width: 350px;
+  max-height: 180px;
+  transition: all 250ms ease-out;
+}
+
+.box:hover {
+  transform: translateY(-20%);
+}
+
+.text {
+  padding: .5rem;
+}
+
+.text a {
+  color: black;
+}
+
+.text h3 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1.25em;
+}
+
+footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  color: #737373;
+  font-size: 20px;
+}
+
+footer h5 {
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px
+}

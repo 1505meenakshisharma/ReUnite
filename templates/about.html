@@ -1,0 +1,23 @@
+{% extends 'homepage.html' %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'reunite_assets/css/hide_titles_container-boxes_classes.css' %}">
+{% endblock %}
+
+
+{% block content %}
+  <p class="about_p">ReUnite app is developed by Amruta, Meenakshi & Shubham...</p>
+  <div class="about_div">
+    <img src="{% static 'reunite_assets/img/amruta.png' %}" alt="Amruta" hspace="40">
+    <img src="{% static 'reunite_assets/img/meenakshi.png' %}" alt="Meenakshi" hspace="40">
+    <img src="{% static 'reunite_assets/img/shubham.png' %}" alt="Shubham" hspace="40">
+    &nbsp;&nbsp;&nbsp;
+    <h2 style="display:inline;">Amruta Kodagali</h2>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h2 style="display:inline;">Meenakshi Sharma</h2>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <h2 style="display:inline;">Shubham Kumar</h2>
+  </div>
+{% endblock %}

@@ -1,0 +1,168 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="icon" href="{% static 'reunite_assets/img/favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'reunite_assets/css/homepage.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+	{% block css %}
+	{% endblock %}
+
+	<!-- Bootstrap JQuery-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+	{% if title %}
+	<title>{{ title }}</title>
+	{% else %}
+	<title>ReUnite</title>
+	{% endif %}
+</head>
+<body>
+	<header>
+		<a href="{% url 'home' %}" class="homepage_logo">
+			<img src="{% static 'reunite_assets/img/logo.png' %}"/>
+		</a>
+		<marquee class="header_marquee">
+			<a href="https://www.thehindu.com/society/indias-missing-children-what-the-whatsapp-rumours-dont-tell-you/article24641527.ece">Some 174 children go missing every day. Only about 50% of them are ever found again.</a>
+		</marquee>
+    	<nav>
+			<ul>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				{% if user.is_authenticated %}
+					<style type="text/css">
+						nav li a {
+							margin: 99px;
+						}
+					</style>
+					<li><a href="{% url 'profile' %}">Profile</a></li>
+						{% if user.is_superuser %}
+							<style type="text/css">
+								nav li a {
+									margin: 62px;
+								}
+							</style>
+	      					<li><a href="/admin/">Admin Page</a></li>
+	      				{% endif %}
+					<li><a href="{% url 'logout' %}">Logout</a></li>
+				{% else %}
+        			<li><a href="{% url 'login' %}">Login</a></li>
+					<li><a href="{% url 'signup' %}">Signup</a></li>
+				{% endif %}
+        		<li><a href="{% url 'about' %}">About Us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	{% if messages %}
+		<div class="messages">
+    	{% for message in messages %}
+			<p {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </p>
+    	{% endfor %}
+		</div>
+  	{% endif %}
+
+	{% block content %}
+	{% endblock %}
+
+	<section class="titles">
+		&nbsp &nbsp &nbsp &nbsp &nbsp
+		<a href="{% url 'login' %}" class="login_logo">
+			<img src="{% static 'reunite_assets/img/login.png' %}" alt="Login"/>
+			<span>Login</span>
+		</a>
+		&nbsp &nbsp &nbsp &nbsp &nbsp
+		<a href="{% url 'missing_child' %}" class="my_child_is_missing_cartoon_logo">
+			<img src="{% static 'reunite_assets/img/my_child_is_missing.png' %}" alt="My Child Is Missing"/>
+			<span>My Child Is Missing</span>
+		</a>
+		{% if user.is_authenticated %}
+			<style type="text/css">
+				.titles .login_logo {
+					display: none;
+				}
+
+				.titles .my_child_is_missing_cartoon_logo {
+					margin-left: 100px;
+					margin-right: 25px;
+				}
+			</style>
+		{% endif %}
+		<img src="{% static 'reunite_assets/img/homepage_missing_child.jpg' %}" alt="Missing Girl With Teddy In Her Hand"/>
+		<a href="{% url 'search_child' %}" class="search_a_missing_child_cartoon_logo">
+			<img src="{% static 'reunite_assets/img/search_a_missing_child.png' %}" alt="Search A Missing Child"/>
+			<span>Search A Missing Child</span>
+		</a>
+		&nbsp &nbsp &nbsp &nbsp &nbsp
+		<a href="{% url 'sighted_child' %}" class="sighted_a_missing_child_logo">
+			<img src="{% static 'reunite_assets/img/sighted_a_missing_child.png' %}" alt="Sighted A Missing Child"/>
+			<span>Sighted A Missing Child</span>
+		</a>
+		<h1>ReUnite</h1>
+    	<p>You can help a missing child!</p>
+		<br>
+	</section>
+	<section class="container-boxes">
+    	<div class="box">
+      		<div class="text">
+        		<a href="{% url 'home' %}">
+          			<h3>We owe our children, the most vulnerable citizens in our society, a life free of violence and fear</h3>
+          			<p></p>
+        		</a>
+      		</div>
+    	</div>
+    	<div class="box">
+      		<div class="text">
+        		<a href="{% url 'home' %}">
+          			<h3>There can be no keener revelation of a society's soul than the way in which it treats its children!</h3>
+          			<p></p>
+        		</a>
+      		</div>
+    	</div>
+    	<div class="box">
+      		<div class="text">
+        		<a href="{% url 'home' %}">
+          			<h3>Safety and security don't just happen, they are the result of public investment.</h3>
+          			<p></p>
+        		</a>
+      		</div>
+    	</div>
+	</section>
+    <footer class="container-fluid">
+		<h5>What We Do</h5>
+		<p class="text-justify">ReUnite is an initiative to help common people find their missing children. Each year approximately 1,00,000 children are lost in India. In some cases, lost children are found easily while in few cases missing children are never reunited with their relatives. ReUnite app helps to unite the child back to his/her family.</p>
+	</footer>
+	<script>
+		$(document).ready(function() {
+			$("input[type = number]").on("focus", function() {
+				$(this).on("keydown", function(event) {
+					var id = $(this).attr("id");
+					if(id === "id_height" && (event.keyCode === 38 || event.keyCode === 40 || event.keyCode === 69 || event.keyCode === 107 || event.keyCode === 109 || event.keyCode === 187 || event.keyCode === 189)) {
+						event.preventDefault();
+					}
+					if(id !== "id_height" && (event.keyCode === 38 || event.keyCode === 40 || event.keyCode === 69 || event.keyCode === 107 || event.keyCode === 109 || event.keyCode === 110 || event.keyCode === 187 || event.keyCode === 189 || event.keyCode === 190)) {
+						event.preventDefault();
+					}
+				});
+			});
+			$("input[type = text]").on("focus", function() {
+				$(this).on("keydown", function(event) {
+					var id = $(this).attr("id");
+					if(id === "id_parent_mobile_no_1" && !( (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) || event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39 ) ) {
+						event.preventDefault();
+					}
+				});
+			});
+		});
+	</script>
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.yml
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+media/
+ReUnite/__pycache__/
+ReUnite/migrations/
+static/admin/
+static/reunite_assets/img/
+/db.sqlite3
